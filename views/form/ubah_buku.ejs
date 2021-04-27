@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-header">
+      Edit buku
+    </div>
+    <div class="card-body">
+      <form method="POST" action="/buku/ubah/<%= data.id %>">
+        <div class="mb-3">
+          <label for="judul" class="form-label">Judul Buku</label>
+          <input type="text" class="form-control" name="judul" value="<%= data.judul%>">
+        </div>
+        <div class="mb-3">
+          <label for="pengarang" class="form-label">Pengarang</label>
+          <input type="text" class="form-control" name="pengarang" value="<%= data.pengarang%>">
+        </div>
+        <div class="mb-3">
+          <label for="penerbit" class="form-label">Penerbit</label>
+          <input type="text" class="form-control" name="penerbit" value="<%= data.penerbit%>">
+        </div>
+
+        <button type="submit" class="btn btn-success btn-block">Simpan</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %> 

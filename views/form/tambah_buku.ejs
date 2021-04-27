@@ -1,0 +1,51 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-header">
+      Tambah buku
+    </div>
+    <div class="card-body">
+      <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="judul" class="form-label">Judul Buku</label>
+          <input type="text" class="form-control" name="judul" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+
+          <label class="form-label" for="gambar" >Gambar</label>
+
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" id="gambar" name="gambar"  accept="image/x-png,image/gif,image/jpeg" required>
+              <label class="custom-file-label" for="gambar">Pilih Gambar</label>
+            </div>
+    
+        </div>
+        
+        <div class="mb-3">
+          <label for="pengarang" class="form-label">Pengarang</label>
+          <input type="text" class="form-control" name="pengarang" required>
+        </div>
+        <div class="mb-3">
+          <label for="penerbit" class="form-label">Penerbit</label>
+          <input type="text" class="form-control" name="penerbit" required>
+        </div>
+    
+        
+    
+        <button type="submit" class="btn btn-success">Tambahkan</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.querySelector('.custom-file-input').addEventListener('change',function(e){
+    var fileName = document.getElementById("gambar").files[0].name;
+    var nextSibling = e.target.nextElementSibling
+    nextSibling.innerText = fileName
+  })
+</script>
+
+<%- include('../partials/footer') %> 
